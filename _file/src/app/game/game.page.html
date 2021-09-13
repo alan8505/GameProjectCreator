@@ -1,0 +1,23 @@
+<ion-content>
+
+    <div #container></div>
+
+    <strong id="scoreBoard" style="color:black">
+        <ion-icon name="alarm-outline"></ion-icon>
+        時間：{{game.getLeftTime()}}<br>
+        <ion-icon name="diamond-outline"></ion-icon>
+        分數：{{game.score}}
+    </strong>
+
+    <div class="gameButton" [hidden]=!game.isPause()>
+        <ion-button #startButton size="large" expand="block" shape="round" (click)="game.stop();game.start()">
+            <ion-icon name="reload-outline"></ion-icon>
+            重新開始
+        </ion-button>
+        <ion-button #startButton size="large" expand="block" shape="round" routerLink="/home" routerDirection="root">
+            <ion-icon name="arrow-undo-outline"></ion-icon>
+            返回選單
+        </ion-button>
+    </div>
+
+</ion-content>
